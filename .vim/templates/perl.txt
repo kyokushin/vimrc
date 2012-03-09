@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+#pod2usage用。使い方などを記載する。
+=head1 SYNOPSIS
+
+
+
+=cut
+
+use strict;
+use warnings;
+use utf8;
+use Getopt;
+use Pod::Usage 'pod2usage';
+
+binmode STDOUT,":utf8";
+binmode STDIN,":utf8";
+
+my $opt_help;
+
+GetOptions('help'=>\$opt_help) or pod2usage();
+
+pod2usage() if $opt_help;
