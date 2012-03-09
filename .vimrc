@@ -1,12 +1,17 @@
+if v:version < 700
+	finish
+endif	
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+let g:vundle_default_git_proto = 'git'
 
 " let Vundle manage Vundle
 " " required! 
-" Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle'
 "
 " " My Bundles here:
 " "
@@ -16,15 +21,18 @@ call vundle#rc()
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
 " " vim-scripts repos
-"Bundle 'git://github.com/vim-scripts/L13.git'
-Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
-Bundle 'git://github.com/Shougo/vimproc.git'
-Bundle 'git://github.com/yandy/vim-omnicppcomplete.git'
-Bundle 'git://github.com/Shougo/unite.vim.git'
-Bundle 'git://github.com/thinca/vim-quickrun.git'
-Bundle 'git://github.com/Shougo/vimshell.git'
-Bundle 'git://github.com/vim-scripts/closetag.vim.git'
-Bundle 'git://github.com/codegram/vim-todo.git'
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/AutoComplPop'
+Bundle 'Shougo/vimproc'
+Bundle 'yandy/vim-omnicppcomplete'
+Bundle 'Shougo/unite.vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'Shougo/vimshell'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'codegram/vim-todo'
+Bundle 'Townk/vim-autoclose'
+Bundle 'vim-scripts/teol.vim'
+"Bundle 'vim-jp/vimdoc-ja'
 " Bundle 'FuzzyFinder'
 " " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -105,5 +113,7 @@ set laststatus=2
 set statusline=[%n]%1*%m%*%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%<%{fnamemodify(getcwd(),':~')}]%-8([%{GetB()}]%)\ %-11(%l,%c%V%)\ %4P
 
 "" template file setting
-" autocmd BufNewFile	*.php	0r ~/vimfiles/templates/php.txt
-" autocmd BufNewFile	*.html	0r ~/vimfiles/templates/html.txt
+autocmd BufNewFile	*.php	0r ~/.vim/templates/php.txt
+autocmd BufNewFile	*.html	0r ~/.vim/templates/html.txt
+autocmd BufNewFile	*.tpl	0r ~/.vim/templates/html.txt
+autocmd BufNewFile	*.pl	0r ~/.vim/templates/perl.txt
